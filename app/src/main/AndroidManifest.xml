@@ -13,7 +13,7 @@
         android:theme="@style/Theme.LeafAgentAndroidApp"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="com.market.leafandroid.sellers.SellersActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

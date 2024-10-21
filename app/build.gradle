@@ -7,7 +7,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.market.leafandroid"
+        applicationId 'com.market.leafandroid'
         minSdk 31
         targetSdk 33
         versionCode 1
