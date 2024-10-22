@@ -10,18 +10,20 @@ import java.util.LinkedList;
 
 public class SellersActivity extends AppCompatActivity implements SellersView {
 
-    SellerListAdapter adapter;
-
+    private SellerListAdapter adapter;
+    private SellersPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sellers);
+        presenter = new SellersPresenter(this);
 
-        RecyclerView sellersRecycler = this.findViewById(R.id.sellers_view);
+        RecyclerView sellersRecycler = findViewById(R.id.sellers_view);
         sellersRecycler.setLayoutManager(new GridLayoutManager(this, 2));
         adapter = new SellerListAdapter();
         sellersRecycler.setAdapter(adapter);
+        presenter.loadAllSellers();
     }
 
     @Override

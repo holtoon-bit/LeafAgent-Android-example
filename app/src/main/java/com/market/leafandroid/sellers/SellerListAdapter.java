@@ -14,7 +14,7 @@ import com.market.leafandroid.R;
 import java.util.LinkedList;
 
 public class SellerListAdapter extends RecyclerView.Adapter<SellerListAdapter.ViewHolder> {
-    private LinkedList<Seller> sellers;
+    private LinkedList<Seller> sellers = new LinkedList<>();
 
     @NonNull
     @Override

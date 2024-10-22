@@ -4,11 +4,11 @@ plugins {
 
 android {
     namespace 'com.market.leafandroid'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId 'com.market.leafandroid'
-        minSdk 31
+        minSdk 28
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -30,6 +30,7 @@ android {
 
 dependencies {
 
+    implementation libs.sqlite.jdbc
     implementation libs.appcompat
     implementation libs.material
     implementation libs.constraintlayout
