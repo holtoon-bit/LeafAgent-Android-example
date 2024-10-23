@@ -8,7 +8,7 @@ public class SellerRepositoryImpl implements SellerRepository {
     private final SellerDAO sellerDAOImpl;
 
     public SellerRepositoryImpl() {
-        sellerDAOImpl = new SellerDAOImpl();
+        sellerDAOImpl = new SellerLocalSQLiteDAOImpl();
     }
 
     @Override

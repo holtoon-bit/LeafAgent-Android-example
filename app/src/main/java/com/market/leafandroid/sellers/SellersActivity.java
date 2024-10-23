@@ -17,13 +17,20 @@ public class SellersActivity extends AppCompatActivity implements SellersView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sellers);
-        presenter = new SellersPresenter(this);
 
         RecyclerView sellersRecycler = findViewById(R.id.sellers_view);
         sellersRecycler.setLayoutManager(new GridLayoutManager(this, 2));
         adapter = new SellerListAdapter();
         sellersRecycler.setAdapter(adapter);
+
+        presenter = new SellersPresenter(this);
         presenter.loadAllSellers();
+    }
+
+    @Override
+    protected void onDestroy() {
+        presenter.destroy();
+        super.onDestroy();
     }
 
     @Override
@@ -35,4 +42,5 @@ public class SellersActivity extends AppCompatActivity implements SellersView {
     public void addSeller(Seller seller) {
         adapter.addSeller(seller);
     }
+
 }

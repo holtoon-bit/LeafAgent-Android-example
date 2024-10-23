@@ -6,6 +6,7 @@ espresso-core = "3.5.1"
 appcompat = "1.6.1"
 material = "1.11.0"
 constraintlayout = "2.1.4"
+rxandroid = "3.0.0"
 sqlite-jdbc = "3.46.1.3"
 
 [libraries]
@@ -15,6 +16,8 @@ espresso-core = { group = "androidx.test.espresso", name = "espresso-core", vers
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+rxandroid = { module = "io.reactivex.rxjava3:rxandroid", version.ref = "rxandroid" }
+rxjava = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxandroid" }
 sqlite-jdbc = { group = "org.xerial", name = "sqlite-jdbc", version.ref = "sqlite-jdbc" }
 
 [plugins]
