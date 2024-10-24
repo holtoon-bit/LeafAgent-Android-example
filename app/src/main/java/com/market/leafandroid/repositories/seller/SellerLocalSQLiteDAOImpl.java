@@ -14,9 +14,10 @@ public class SellerLocalSQLiteDAOImpl implements SellerDAO {
     private SQLiteDBHelper dbHelper;
     private SQLiteDatabase db;
 
+    // Must run not into Main Thread
     public SellerLocalSQLiteDAOImpl() {
         dbHelper = SQLiteDBHelper.getDefault();
-        new Thread(() -> db = dbHelper.getWritableDatabase()).start();
+        db = dbHelper.getWritableDatabase();
     }
 
     @Override
@@ -39,9 +40,6 @@ public class SellerLocalSQLiteDAOImpl implements SellerDAO {
         String where = String.format("%s = ?", SellerEntry._ID) ;
         String[] whereValues = {Integer.toString(id)};
 
-        String sortByOrder =
-                SellerEntry._ID + " DESC";
-
         Cursor result = db.query(
                 SellerEntry.TABLE_NAME,
                 resultColumns,
@@ -49,7 +47,7 @@ public class SellerLocalSQLiteDAOImpl implements SellerDAO {
                 whereValues,
                 null,
                 null,
-                sortByOrder
+                null
         );
 
         Seller seller = null;
@@ -72,9 +70,6 @@ public class SellerLocalSQLiteDAOImpl implements SellerDAO {
                 SellerEntry.COLUMN_IMAGE
         };
 
-        String sortByOrder =
-                SellerEntry._ID + " DESC";
-
         Cursor results = db.query(
                 SellerEntry.TABLE_NAME,
                 resultColumns,
@@ -82,7 +77,7 @@ public class SellerLocalSQLiteDAOImpl implements SellerDAO {
                 null,
                 null,
                 null,
-                sortByOrder
+                null
         );
 
         LinkedList<Seller> sellers = new LinkedList<>();

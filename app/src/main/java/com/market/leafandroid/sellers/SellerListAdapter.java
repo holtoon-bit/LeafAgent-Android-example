@@ -1,10 +1,9 @@
 package com.market.leafandroid.sellers;
 
+import android.content.Context;
 import android.net.Uri;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,7 +18,7 @@ public class SellerListAdapter extends RecyclerView.Adapter<SellerListAdapter.Vi
     @NonNull
     @Override
     public SellerListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(parent);
+        return new ViewHolder(parent.getContext());
     }
 
     @Override
@@ -39,23 +38,22 @@ public class SellerListAdapter extends RecyclerView.Adapter<SellerListAdapter.Vi
         notifyItemChanged(getItemCount()-1);
     }
 
-    public void addAllSellers(LinkedList<Seller> sellers) {
+    public void addAllSellers(LinkedList<Seller> sellerList) {
         int prevSize = getItemCount();
-        sellers.addAll(sellers);
+        sellers.addAll(sellerList);
         notifyItemChanged(prevSize, sellers.size());
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private View view;
+        private SellerItemView view;
 
-        public ViewHolder(@NonNull ViewGroup parent) {
-            this(LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.seller_item_view, parent, false));
+        public ViewHolder(@NonNull SellerItemView itemView) {
+            super(itemView);
+            view = itemView;
         }
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            this.view = itemView;
+        public ViewHolder(@NonNull Context context) {
+            this(new SellerItemView(context));
         }
 
         public View getView() {
@@ -63,11 +61,11 @@ public class SellerListAdapter extends RecyclerView.Adapter<SellerListAdapter.Vi
         }
 
         public void setImage(String url) {
-            ((ImageView) view.findViewById(R.id.seller_image)).setImageURI(Uri.parse("https://avatars.mds.yandex.net/i?id=cd8a22d2654a355fa64363e141b450ec_l-4073135-images-thumbs&n=13"));
+            view.getImageView().setImageURI(Uri.parse(url));
         }
 
         public void setName(String name) {
-            ((TextView) view.findViewById(R.id.seller_name)).setText(name);
+            view.getNameView().setText(name);
         }
     }
 }

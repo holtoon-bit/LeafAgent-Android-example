@@ -9,13 +9,16 @@ public class SellersPresenter {
 
     public SellersPresenter(SellersView view) {
         this.view = view;
-
-        SQLiteDBHelper.createDefault(view.getBaseContext());
-        sellerRepository = new SellerRepositoryImpl(); // вызвать, вместе с loadAllSellers(), позже прошлого метода
     }
 
     public void loadAllSellers() {
-        view.addSellers(sellerRepository.getAll());
+        new Thread(() -> {
+            if (sellerRepository == null) {
+                SQLiteDBHelper.createDefault(view.getBaseContext());
+                sellerRepository = new SellerRepositoryImpl();
+            }
+            view.addSellers(sellerRepository.getAll());
+        }).start();
     }
 
     public void destroy() {
