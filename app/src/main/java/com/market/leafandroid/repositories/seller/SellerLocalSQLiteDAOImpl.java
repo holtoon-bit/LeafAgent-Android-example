@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.market.leafandroid.repositories.seller.database.local.SQLiteDBHelper;
 import com.market.leafandroid.repositories.seller.database.local.SQLiteDBContract.SellerEntry;
-import com.market.leafandroid.sellers.Seller;
+import com.market.leafandroid.objects.Seller;
 
 import java.util.LinkedList;
 

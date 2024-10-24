@@ -1,14 +1,14 @@
-package com.market.leafandroid.sellers;
+package com.market.leafandroid.activities.sellers;
 
 import android.content.Context;
 import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.market.leafandroid.R;
+
+import com.market.leafandroid.objects.Seller;
 
 import java.util.LinkedList;
 
@@ -23,9 +23,7 @@ public class SellerListAdapter extends RecyclerView.Adapter<SellerListAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull SellerListAdapter.ViewHolder holder, int position) {
-        Seller seller = sellers.get(position);
-        holder.setImage(seller.getImage());
-        holder.setName(seller.getName());
+        holder.setSeller(sellers.get(position));
     }
 
     @Override
@@ -60,12 +58,8 @@ public class SellerListAdapter extends RecyclerView.Adapter<SellerListAdapter.Vi
             return view;
         }
 
-        public void setImage(String url) {
-            view.getImageView().setImageURI(Uri.parse(url));
-        }
-
-        public void setName(String name) {
-            view.getNameView().setText(name);
+        public void setSeller(Seller seller) {
+            view.setInfo(seller);
         }
     }
 }

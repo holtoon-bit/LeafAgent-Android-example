@@ -26,7 +26,9 @@ public class SQLiteDBHelper extends SQLiteOpenHelper {
     }
 
     public static void createDefault(Context context) {
-        defaultHelper = new SQLiteDBHelper(context);
+        if (defaultHelper == null) {
+            defaultHelper = new SQLiteDBHelper(context);
+        }
     }
 
     public static SQLiteDBHelper getDefault() {

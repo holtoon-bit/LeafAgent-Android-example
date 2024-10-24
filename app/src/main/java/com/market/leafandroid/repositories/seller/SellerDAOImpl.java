@@ -1,6 +1,6 @@
 package com.market.leafandroid.repositories.seller;
 
-import com.market.leafandroid.sellers.Seller;
+import com.market.leafandroid.objects.Seller;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

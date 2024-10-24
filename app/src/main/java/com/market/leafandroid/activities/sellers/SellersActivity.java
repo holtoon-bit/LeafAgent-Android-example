@@ -1,4 +1,4 @@
-package com.market.leafandroid.sellers;
+package com.market.leafandroid.activities.sellers;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import com.market.leafandroid.R;
+import com.market.leafandroid.objects.Seller;
+
 import java.util.LinkedList;
 
 public class SellersActivity extends AppCompatActivity implements SellersView {

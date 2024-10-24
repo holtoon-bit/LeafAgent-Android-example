@@ -1,6 +1,8 @@
-package com.market.leafandroid.sellers;
+package com.market.leafandroid.activities.sellers;
 
 import android.content.Context;
+
+import com.market.leafandroid.objects.Seller;
 
 import java.util.LinkedList;
 

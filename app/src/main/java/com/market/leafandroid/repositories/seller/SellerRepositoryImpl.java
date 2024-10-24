@@ -1,6 +1,7 @@
 package com.market.leafandroid.repositories.seller;
 
-import com.market.leafandroid.sellers.Seller;
+import com.market.leafandroid.objects.Seller;
+import com.market.leafandroid.repositories.seller.database.local.SQLiteDBHelper;
 
 import java.util.LinkedList;
 

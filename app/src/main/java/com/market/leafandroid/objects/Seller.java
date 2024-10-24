@@ -1,4 +1,4 @@
-package com.market.leafandroid.sellers;
+package com.market.leafandroid.objects;
 
 public class Seller {
     private int id;

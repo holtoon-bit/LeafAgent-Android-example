@@ -1,4 +1,4 @@
-package com.market.leafandroid.sellers;
+package com.market.leafandroid.activities.sellers;
 
 import com.market.leafandroid.repositories.seller.SellerRepositoryImpl;
 import com.market.leafandroid.repositories.seller.database.local.SQLiteDBHelper;
