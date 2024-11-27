@@ -1,19 +1,23 @@
 package com.market.leafandroid.activities.sellers;
 
 import android.content.Context;
-import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.LinkedList;
+
 import com.market.leafandroid.objects.Seller;
 
-import java.util.LinkedList;
+import leafagent.annotations.Branch;
+import leafagent.annotations.Leaf;
 
 public class SellerListAdapter extends RecyclerView.Adapter<SellerListAdapter.ViewHolder> {
     private LinkedList<Seller> sellers = new LinkedList<>();
+
+    public SellerListAdapter() {
+    }
 
     @NonNull
     @Override
@@ -31,6 +35,7 @@ public class SellerListAdapter extends RecyclerView.Adapter<SellerListAdapter.Vi
         return sellers.size();
     }
 
+    @Leaf
     public void addSeller(Seller seller) {
         sellers.add(seller);
         notifyItemChanged(getItemCount()-1);

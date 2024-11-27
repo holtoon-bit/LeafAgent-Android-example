@@ -13,10 +13,15 @@ public class SellerActivity extends AppCompatActivity implements SellerView {
 
     private SellerPresenter presenter;
 
+    public void greeting() {
+        System.out.println("Hello");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seller);
+        greeting();
         presenter = new SellerPresenter(this);
         runOnUiThread(() -> presenter.updateProfileInfo());
     }

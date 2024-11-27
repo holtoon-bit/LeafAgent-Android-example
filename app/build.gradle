@@ -1,7 +1,13 @@
 plugins {
     alias(libs.plugins.androidApplication)
+    alias(libs.plugins.leafplugin)
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
 android {
     namespace 'com.market.leafandroid'
     compileSdk 34
@@ -26,10 +32,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    packagingOptions {
+        pickFirst 'META-INF/AL2.0'
+        pickFirst 'META-INF/LGPL2.1'
+    }
 }
 
 dependencies {
-
     implementation libs.sqlite.jdbc
     implementation libs.appcompat
     implementation libs.material
@@ -39,4 +48,5 @@ dependencies {
     androidTestImplementation libs.espresso.core
     implementation libs.rxandroid
     implementation libs.rxjava
+    implementation libs.leafagent
 }

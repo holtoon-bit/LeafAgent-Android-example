@@ -1,5 +1,6 @@
 [versions]
 agp = "8.2.0-alpha12"
+leafplugin = "1.0.0"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
@@ -19,7 +20,9 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayo
 rxandroid = { module = "io.reactivex.rxjava3:rxandroid", version.ref = "rxandroid" }
 rxjava = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxandroid" }
 sqlite-jdbc = { group = "org.xerial", name = "sqlite-jdbc", version.ref = "sqlite-jdbc" }
+leafagent = { group = "leafagent", name = "app", version.ref = "leafplugin" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
+leafplugin = { id = "leafagent.plugin", version.ref = "leafplugin" }
 
