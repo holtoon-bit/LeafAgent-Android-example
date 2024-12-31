@@ -9,6 +9,10 @@ import android.widget.TextView;
 
 import com.market.leafandroid.R;
 
+import leafagent.annotations.Branch;
+import leafagent.annotations.Leaf;
+
+@Branch
 public class SellerActivity extends AppCompatActivity implements SellerView {
 
     private SellerPresenter presenter;

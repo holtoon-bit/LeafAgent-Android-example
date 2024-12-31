@@ -26,8 +26,6 @@ public class SellersActivity extends AppCompatActivity implements SellersView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sellers);
-        // Need to add to bytecode from the Leaf
-        JsonWriter.setProjectPath(getFilesDir().getPath());
         presenter = new SellersPresenter(this);
 
         RecyclerView sellersRecycler = findViewById(R.id.sellers_view);

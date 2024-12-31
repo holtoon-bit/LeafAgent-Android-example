@@ -13,6 +13,7 @@ import com.market.leafandroid.objects.Seller;
 import leafagent.annotations.Branch;
 import leafagent.annotations.Leaf;
 
+@Branch
 public class SellerListAdapter extends RecyclerView.Adapter<SellerListAdapter.ViewHolder> {
     private LinkedList<Seller> sellers = new LinkedList<>();
 
